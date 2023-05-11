@@ -1,0 +1,59 @@
+<h2 class="orderheading"> Yours Orders</h2>
+
+
+<table mat-table [dataSource]="orderList" class="mat-elevation-z8">
+
+  
+    <!-- <ng-container matColumnDef="sno">
+      <th mat-header-cell *matHeaderCellDef> S No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.sno}} </td>
+    </ng-container> -->
+  
+ 
+    <ng-container matColumnDef="orderno">
+      <th mat-header-cell *matHeaderCellDef> Order No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.orderno}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="item">
+      <th mat-header-cell *matHeaderCellDef> Item </th>
+      <td mat-cell *matCellDef="let element"> {{element.product ? element.product.name: '-' }} </td>
+    </ng-container>
+  
+    
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.product? element.product.price: '-'}} </td>
+    </ng-container>
+
+     
+       <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef> Quantity </th>
+        <td mat-cell *matCellDef="let element"> {{element.product ? element.product.quantity: '-'}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="farmername">
+        <th mat-header-cell *matHeaderCellDef> Farmer Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.product? (element.product.user.firstname +" "+ element.product.user.lastname) :'-'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="emailid">
+        <th mat-header-cell *matHeaderCellDef> Username</th>
+        <td mat-cell *matCellDef="let element"> {{element.product ? element.product.user.username : '-'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="contactno">
+        <th mat-header-cell *matHeaderCellDef> Contact No.</th>
+        <td mat-cell *matCellDef="let element"> {{element.product ? element.product.user.contactno : '--'}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="removeitem">
+        <th mat-header-cell *matHeaderCellDef> Remove Product </th>
+        <td mat-cell *matCellDef="let element"> <button class="btn" mat-button color="" (click)="actionButton(element)">Remove</button> </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  

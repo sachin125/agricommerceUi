@@ -1,0 +1,26 @@
+.footerBody{
+    background-color: grey;
+    padding: 18px;
+    position: absolute;
+    margin-bottom: 10px;
+    /* bottom: 0%; */
+    text-align: center;
+    width: 100%;
+    height: 4rem;
+    font-style:normal;
+}
+
+.headingTitle{
+    color: green;
+}
+
+.text-white{
+    text-decoration: none;
+    color: blue;
+}
+
+.agrilogo{
+    width: 150;
+    height: 5rem;
+    margin: 12px;
+}

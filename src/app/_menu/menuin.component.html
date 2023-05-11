@@ -1,0 +1,19 @@
+
+   <div class="cleaner"></div>
+  <div id="templatemo_menu">
+    <span></span>
+    <a *ngFor="let item of menuItems" routerLink="{{item.path}}" routerLinkActive="active">{{item.text}}</a>
+    <a style="cursor: pointer" (click)="logout();" >logout</a>
+   <!-- <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+   <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+    <a [routerLink]="['/registration']" routerLinkActive="active">Registration</a>
+    <a [routerLink]="['/login']" routerLinkActive="active">Login</a> -->
+   <!-- <a [routerLink]="['/contact']" routerLinkActive="active">contactus</a> -->
+
+    <!-- <a [routerLink]="['/userlist']" routerLinkActive="active">Admin</a>
+    <a [routerLink]="['/product']" routerLinkActive="active">Product</a>  
+    <a [routerLink]="['/productslist']" routerLinkActive="active">Products List</a>
+    <a [routerLink]="['/orders']" routerLinkActive="active">Orders</a>     -->
+    <!-- <a href="/logout" >logout</a> -->
+
+   </div>

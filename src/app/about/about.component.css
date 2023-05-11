@@ -1,0 +1,38 @@
+
+.about{
+    text-align: center;
+    font: bold;
+	background: #D1E8F0;
+}
+
+
+#contentsection {
+	padding: 30px ;
+	background: #D1E8F0;
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+}
+
+#aboutsection {
+	text-align: center;
+}
+
+#headline {
+	text-align: center;
+}
+
+#contentAbout {
+	padding-left: 30px;
+}
+
+#headlinewhy {
+    padding: 12px;
+	text-align: center;
+  
+}
+
+.reasons{
+
+	background: #D1E8F0;
+}

@@ -1,0 +1,66 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25">
+
+    <mat-toolbar class="registratHeading">Registration</mat-toolbar>
+
+    <form [formGroup]="myForm" class="form-group" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="onSubmit()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>First name</mat-label>
+        <input matInput class="form-control" formControlName="firstname" placeholder="firstname" value="">
+        <mat-error *ngIf="myError('firstname', 'required')">First name is required</mat-error>
+        <mat-error *ngIf="myError('firstname', 'maxlength')">Limit exceed</mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput class="form-control" formControlName="lastname" placeholder="lastname" value="">
+        <mat-error *ngIf="myError('lastname', 'required')">last name is required</mat-error>
+        <mat-error *ngIf="myError('lastname', 'maxlength')">Limit exceed</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Contact No.</mat-label>
+        <input matInput class="form-control" formControlName="contactno" type="number" placeholder="contactno" value="">
+        <mat-error *ngIf="myError('contactno', 'required')">Contact no. is required</mat-error>
+        <mat-error *ngIf="myError('contactno', 'maxlength')">Limit exceed</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email ID</mat-label>
+        <input matInput class="form-control" formControlName="username" placeholder="emailid" type="email" value="">
+        <span class="error" * ngIf="username.invalid && username.touched"> email is required</span>
+        <mat-error *ngIf="myError('username', 'required')">Email is required</mat-error>
+        <mat-error *ngIf="myError('username', 'email')">Email should be in abc@abc.com</mat-error>
+        <mat-error *ngIf="myError('username', 'maxlength')">Limit exceed</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput class="form-control" formControlName="password" type="password" placeholder="password" value="">
+        <mat-error *ngIf="myError('password', 'required')">Password is required</mat-error>
+        <mat-error *ngIf="myError('password', 'maxlength')">Limit exceed</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <input matInput class="form-control" formControlName="address" placeholder="address" value="">
+        <mat-error *ngIf="myError('address', 'required')">Address is required</mat-error>
+        <mat-error *ngIf="myError('address', 'maxlength')">Limit exceed</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>User Type</mat-label>
+        <mat-select class="form-control" formControlName="userType">
+          <mat-option *ngFor="let user of user" [value]="user.value">
+            {{user.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button class="btnSubmit" mat-button type="submit"> Submit</button>
+    </form>
+  </mat-card>
+
+
+</div>

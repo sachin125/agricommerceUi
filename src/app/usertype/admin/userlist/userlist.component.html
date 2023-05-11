@@ -1,0 +1,55 @@
+<h2 class="adminhed">Welcome On Admin Page</h2>
+
+<button mat-raised-button (click)="farmers()"> Farmers </button>
+<button mat-raised-button (click)="customers()"> Customers </button>
+
+<table mat-table [dataSource]="userList" class="mat-elevation-z8">
+  
+  <!-- <ng-container matColumnDef="sno">
+    <th mat-header-cell *matHeaderCellDef> S No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.sno}} </td>
+  </ng-container> -->
+
+
+  <ng-container matColumnDef="firstname">
+    <th mat-header-cell *matHeaderCellDef> First Name  </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastname">
+    <th mat-header-cell *matHeaderCellDef> Last Name  </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef> User name </th>
+    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+  </ng-container>
+
+   
+     <ng-container matColumnDef="contactno">
+      <th mat-header-cell *matHeaderCellDef> Contact No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.contactno}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="enabled">
+      <th mat-header-cell *matHeaderCellDef> Enabled </th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="element.enabled">Enabled</span>  
+        <span *ngIf="!element.enabled">Disabled</span>  
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element">
+        <button *ngIf="element.enabled" mat-button color=""  class="btn"  (click)="actionDisableButton(element)">Disable </button> 
+        <button *ngIf="!element.enabled" mat-button color="" class="btn" (click)="actionEnableButton(element)">Enable </button> 
+      </td>
+    </ng-container>
+    
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

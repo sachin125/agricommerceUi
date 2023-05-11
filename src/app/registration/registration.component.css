@@ -1,0 +1,47 @@
+.registratHeading{
+  background-color:  #006D77;
+  color: white;
+  text-align: center;
+}
+
+.example-form {
+        width: 100%;
+      }
+   
+      .registratHeading{
+        background-color: #006D77;
+        color: white;
+      
+      }
+
+   .example-full-width {
+     width: 100%;
+   }
+ 
+   .mat-mdc-card {
+     background-color:#EDF6F9;
+     
+         font-family: "Raleway", sans-serif;
+         background: #fff9f9;
+         border-radius: 8px;
+         box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+         height: 680px;
+         width: 30%;
+         margin: 6rem auto 8.1rem auto;
+     
+   }
+ 
+   .mat-toolbar {
+     padding: 12px;
+   }
+ 
+.btnSubmit{
+  display: block;
+  margin: auto;
+  background-color:#1db6c4;
+}
+   
+ 
+   .regisCard{
+    padding: 30px 0px 20px 0px;
+   }

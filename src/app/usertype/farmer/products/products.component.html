@@ -1,0 +1,55 @@
+<div class="regisCard">
+
+  <div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+
+      <mat-toolbar class="registratHeading"> Products Form</mat-toolbar>
+
+      <form [formGroup]="myForm" class="form-group" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="onSubmit()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Item Name</mat-label>
+          <input matInput class="form-control" formControlName="name" placeholder="enter item name" value="">
+          <mat-error *ngIf="myError('name', 'required')">Item Name is required</mat-error>
+          <mat-error *ngIf="myError('name', 'maxlength')">Limit exceed</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Item price</mat-label>
+          <input matInput class="form-control" formControlName="price" placeholder="enter price" value="">
+          <mat-error *ngIf="myError('price', 'required')">Item price is required</mat-error>
+          <mat-error *ngIf="myError('price', 'maxlength')">Limit exceed</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Item Quantity</mat-label>
+          <input matInput class="form-control" formControlName="quantity" type="number"
+            placeholder="enter item quantity" value="">
+          <mat-error *ngIf="myError('quantity', 'required')">Item quantity is required</mat-error>
+          <mat-error *ngIf="myError('quantity', 'maxlength')">Limit exceed</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Item Remark</mat-label>
+          <input matInput class="form-control" formControlName="description" placeholder="Enter item remark" value="">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Published</mat-label>
+          <mat-select formControlName="published">
+            <mat-option [value]="1">Yes</mat-option>
+            <mat-option [value]="0">No</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <button class="btnSubmit" mat-button type="submit" [disabled]="clicked"> Submit</button>
+      </form>
+    </mat-card>
+
+
+  </div>
+
+
+</div>

@@ -1,0 +1,23 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25">
+    <mat-toolbar class="loginHeading">Login</mat-toolbar>
+    <form [formGroup]="myForm" class="form-group" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput class="form-control" formControlName="email" placeholder="Username" type="email" value="">
+        <span class="error" * ngIf="email.invalid && email.touched"> email is required</span>
+        <mat-error *ngIf="myError('password', 'required')">Email should be in abc@abc.com</mat-error>
+        <mat-error *ngIf="myError('password', 'maxlength')">Limit exceed</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput class="form-control" formControlName="password" placeholder="password" type="password" value="">
+        <mat-error *ngIf="myError('password', 'required')">Password is required</mat-error>
+        <mat-error *ngIf="myError('password', 'maxlength')">Limit exceed</mat-error>
+
+      </mat-form-field>
+
+      <button class="btnLogin" mat-button type="submit"> Login</button>
+    </form>
+  </mat-card>
+</div>

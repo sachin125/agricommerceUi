@@ -1,0 +1,80 @@
+<h2 class="orderheading"> Add In Your Card</h2>
+
+<table mat-table [dataSource]="productList" class="mat-elevation-z8">
+
+  
+    <!-- <ng-container matColumnDef="sno">
+      <th mat-header-cell *matHeaderCellDef> S No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.sno}} </td>
+    </ng-container> -->
+  
+ 
+    <ng-container matColumnDef="itemname">
+      <th mat-header-cell *matHeaderCellDef> Item Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+  
+    
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef> Quantity </th>
+      <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+    </ng-container>
+
+     
+       <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description || "--"}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="published">
+        <th mat-header-cell *matHeaderCellDef> Published </th>
+        <td mat-cell *matCellDef="let element"> 
+          <span *ngIf="!element.published">Not Published</span>
+          <span *ngIf="element.published">Published</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="availabled">
+        <th mat-header-cell *matHeaderCellDef> Availabled</th>
+        <td mat-cell *matCellDef="let element"> 
+          <span *ngIf="!element.availabled">Purchased</span>
+          <span *ngIf="element.availabled">Not Purchased</span>
+         </td>
+      </ng-container>
+
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef> Farmer</th>
+        <td mat-cell *matCellDef="let element" > 
+          <span *ngIf="element.user">{{element.user ? (element.user.firstname +" "+ element.user.lastname): '-'}} </span>
+          <span *ngIf="!element.user">-- </span>
+        </td>
+      </ng-container>
+
+      
+      <ng-container matColumnDef="modifiedTime">
+        <th mat-header-cell *matHeaderCellDef> Modified Time</th>
+        <td mat-cell *matCellDef="let element"> {{element.modifiedTime| date: 'medium' || "--"}} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let element" > 
+          <span *ngIf="contextRole.indexOf('ROLE_farmer')>-1"> 
+            <button [disabled]="(element.published)" class="btn" mat-button color=""  (click)="publishedButton(element)">publish</button>
+          </span>
+          <span *ngIf="contextRole.indexOf('ROLE_customer')>-1">
+            <button [disabled]="!(element.availabled)"  class="btn" disabled="btnstate" mat-button color="" (click)="actionButton(element)">Buy</button>
+          </span>
+        </td>
+      </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+ 
